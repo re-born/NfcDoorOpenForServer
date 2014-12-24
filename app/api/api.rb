@@ -8,7 +8,11 @@ class API < Grape::API
 
   resource :user do
     get do
-      user = User.find_by(idm: params[:idm])
+      User.find_by(idm: params[:idm])
+    end
+
+    post do
+      User.create(idm: params[:idm], name: params[:name])
     end
   end
 
