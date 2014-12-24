@@ -2,11 +2,9 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>name</th>
+    <th>idm</th>
+    <th>link to destroy</th>
   </tr>
 
 <% @users.each do |user| %>
@@ -18,7 +16,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
