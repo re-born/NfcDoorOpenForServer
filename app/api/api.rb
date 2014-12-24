@@ -16,7 +16,12 @@ class API < Grape::API
     end
 
     post do
-      User.create(idm: params[:idm], name: params[:name])
+      user = User.new(idm: params[:idm], name: params[:name])
+      if user.save
+        user
+      else
+        {error: "user cannot create with some reason."}
+      end
     end
   end
 
