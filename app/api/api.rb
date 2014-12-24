@@ -8,7 +8,7 @@ class API < Grape::API
 
   resource :user do
     get do
-      if uesr = User.find_by(idm: params[:idm])
+      if user = User.find_by(idm: params[:idm])
         user
       else
         {error: "user cannot find with idm: #{params[:idm]}"}
